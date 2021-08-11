@@ -1,0 +1,2 @@
+class Angler < ApplicationRecord
+end

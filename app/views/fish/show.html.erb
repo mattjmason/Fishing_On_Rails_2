@@ -1,5 +1,7 @@
-<h1> Showing The Fish </h1> 
+<h1> The Fish Page! </h1> 
 
 <%= @fish.species_and_color %>
 <%= @fish.weight %>
 <%= @fish.age %>
+
+<%= link_to "Delete", fish_path(@fish), method: 'delete' %>
