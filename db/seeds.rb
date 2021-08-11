@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Fish.create([
-    {species: "Shark", color: "grey", weight: 99.0 },
-    {species: "Flounder", color: "brown", weight: 8.0},
-    {species: "Seabass", color: "black", weight: 5.0}
+    {species: "Shark", color: "grey", weight: 99.0, age: "young" },
+    {species: "Flounder", color: "brown", weight: 8.0, age: "adult"},
+    {species: "Seabass", color: "black", weight: 5.0, age: "mature"}
 ])
