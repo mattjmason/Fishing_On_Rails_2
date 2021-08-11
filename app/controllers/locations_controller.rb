@@ -10,7 +10,7 @@ end
 
 def new 
     @location = Location.new
-       5.times { @loction.fish.build }
+       5.times { @location.fish.build }
 end 
 
 def create 

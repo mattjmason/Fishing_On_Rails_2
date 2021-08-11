@@ -1,3 +1,4 @@
+<%= render partial: "layouts/error", locals: {object: @angler}%>
 <%= form_for( @angler , url: signup_path) do |f|%>
     <%= f.label :username %>
     <%= f.text_field :username %>
