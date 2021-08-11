@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/navigation' %>
-    <% flash.each do |type, msg| %>
-      <%= msg %>
-      <%end %>
+  <%= link_to "Add Fish", new_fish_path %>
+  <%= link_to "Fish", fish_index_path %>
+  <%= link_to "Locations", locations_path %>
     <%= yield %>
   </body>
 </html>

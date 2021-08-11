@@ -4,4 +4,5 @@
 <%= @fish.weight %>
 <%= @fish.age %>
 
+<%= link_to "Edit", edit_fish_path(@fish)%>
 <%= link_to "Delete", fish_path(@fish), method: 'delete' %>

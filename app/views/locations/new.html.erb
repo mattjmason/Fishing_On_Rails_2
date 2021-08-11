@@ -1,0 +1,16 @@
+<%= form_for(@location) do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+    <h3>Add Fish:</h3>
+  <%= f.fields_for :fish do |l| %>
+    <%= l.label :species %>
+    <%= l.text_field :species %><br/>
+    <%= l.label :color %>
+    <%= l.text_field :color %><br/>
+     <%= l.label :age %>
+    <%= l.text_field :age %><br/>
+    <%= l.label :weight %>
+    <%= l.number_field :weight, step: 0.01  %><br/>
+    <hr>
+  <% end %>
+  <%= f.submit %>
+  <% end %>

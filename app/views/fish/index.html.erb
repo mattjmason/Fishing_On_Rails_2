@@ -1,5 +1,12 @@
+<%= index_header_location%> 
+
+<%
+=begin%>
+ 
 <h1> All of the Fish </h1>
 
 <% @all_fish.each do |f| %>
 <h2> <%= link_to f.species_and_color, fish_path(f) %> - <%= f.weight %> </h2>
-<% end %>
+<% end %> 
+<%
+=end%>

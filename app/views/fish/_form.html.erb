@@ -1,0 +1,12 @@
+<%= form_for([@location, @fish]) do |f| %>
+<%= f.label :species %>
+<%= f.text_field :species%><br/>
+<%= f.label :age %>
+<%= f.text_field :age %><br/>
+<%= f.label :color %>
+<%= f.text_field :color  %><br/>
+<%= f.label :weight %>
+<%= f.number_field :weight, step: 0.01%><br/>
+<%= fields_for_location(f) %>
+<%= f.submit %>
+<% end %>
