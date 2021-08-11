@@ -3,11 +3,16 @@ class FishController < ApplicationController
     before_action :find_fish, only: [:show, :update, :edit, :destroy]
 layout "fish"
 def index 
-    @all_fish = Fish.all
+    if params[:location_id] &&  @location = Location.find_by_id(params[:location_id])
+        @fish = @location.fish.order_by_age
+    else
+        @fish = Fish.order_by_weight.order_by_age
+    end
+    @fish = Fish.color_selector(params[:fish][:color]) if params[:fish] && !params[:fish][:color].blank?
 end
 
 def show 
-    @fish = Fish.find_by_id(params[:id])
+    # @fish = Fish.find_by_id(params[:id])
 end
 
 def new 
