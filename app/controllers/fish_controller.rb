@@ -1,0 +1,5 @@
+class FishController < ApplicationController
+
+
+    
+end
