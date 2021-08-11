@@ -8,8 +8,4 @@ def show
     @fish = Fish.find_by_id(params[:id])
 end
 
-def heaviest_fish 
-
-end
-
 end
