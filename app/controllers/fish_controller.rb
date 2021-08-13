@@ -20,17 +20,18 @@ def new
         @fish = @location.fish.build 
     else 
         @fish = Fish.new
-        # @fish.build_location
+        @fish.build_location
     end
 end
 
 def create
     @fish = Fish.new(fish_params)
+    @fish.angler = current_angler
         if params[:location_id]
             @location = Location.find_by_id(params[:location_id])
         end
         if @fish.save
-            redirect_to location_fish_index_path
+            redirect_to location_fish_index_path(@fish.location)
         else
             render :new
         end

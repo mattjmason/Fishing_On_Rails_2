@@ -15,6 +15,9 @@ end
 
 def create 
     @location = Location.new(location_params)
+    @location.fish.each do |f| 
+        f.angler = current_angler
+    end
     if @location.save 
         redirect_to locations_path
     else 
@@ -37,7 +40,7 @@ end
 private 
 
 def location_params 
-    params.require(:location).permit(:city, fish_attributes: [:species, :color, :weight, :age])
+    params.require(:location).permit(:city, fish_attributes: [:species, :age, :color, :weight])
 
 end
 
