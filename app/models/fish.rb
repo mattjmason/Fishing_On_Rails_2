@@ -8,7 +8,7 @@ class Fish < ApplicationRecord
     validates :age, presence: true
 
     scope :order_by_weight, -> {order(weight: :desc)}
-    scope :order_by_age, -> {order(:age)}
+    # scope :order_by_age, -> {order(:age)}
     scope :color_selector, -> (color) {where('color == ?', color)}
 
     def location_attributes=(hash_of_attributes)
