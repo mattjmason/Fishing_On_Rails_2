@@ -44,7 +44,7 @@ end
 
 def update
    @fish.update(fish_params)
-    if @fish.save
+    if @fish.valid?
         redirect_to fish_path(@fish)
     else
         render :edit
