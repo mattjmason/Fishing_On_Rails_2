@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
     get '/signup', to: 'anglers#new'
     post '/signup', to: 'anglers#create'
-  
+    post "locations/:id/fish/new", to: "fish#create"
+
   resources :fish, only: [:index, :new, :create]
   resources :anglers
   resources :locations do

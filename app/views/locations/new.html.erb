@@ -1,3 +1,4 @@
+<%= render partial: "layouts/error", locals: { object: @location } %>
 <%= form_for(@location) do |f| %>
   <%= render partial: "form", locals: { f: f } %>
     <h3>Add Fish:</h3>

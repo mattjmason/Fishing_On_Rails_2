@@ -1,2 +1,8 @@
 <%= index_header_location%> 
 <%= render partial: "fish", collection: @fish %>
+
+<% if @location %>
+    <%= button_to "Create Fish", new_location_fish_path(@location), method: 'get' %>
+<%end %>
+
+

@@ -6,9 +6,10 @@ layout "fish"
 
 def index 
     if params[:location_id] &&  @location = Location.find_by_id(params[:location_id])
-        @fish = Fish.order_by_weight
-    end
-    @fish = Fish.color_selector(params[:fish][:color]) if params[:fish] && !params[:fish][:color].blank?
+        @fish = @location.fish 
+    else 
+        @fish = Fish.all
+    end  
 end
 
 def show 
@@ -37,23 +38,29 @@ def create
         end
 end
 
+def edit 
+   
+end
 
-def update 
+def update
+   @fish.update(fish_params)
+    if @fish.save
+        redirect_to fish_path(@fish)
+    else
+        render :edit
+    end
 end
 
 
     def destroy 
-        @fish = Fish.find_by_id(params:[:id])
-        if @fish.present?
         @fish.destroy 
-        end
         redirect_to fish_index_path
     end
 
     private 
 
     def fish_params 
-        params.require(:fish).permit(:species, :age, :color, :weight, :angler_id, :location_id, location_attributes: [:city])
+        params.require(:fish).permit(:fish, :species, :age, :color, :weight, :angler_id, :location_id, location_attributes: [:city])
     end
     
     def find_fish

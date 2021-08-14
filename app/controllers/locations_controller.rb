@@ -30,7 +30,13 @@ def edit
 end
 
 def update
-
+    @location = Location.find_by_id(params[:id])
+    if @location.valid? 
+        @location.update(location_params)
+        redirect_to location_path(@location)
+    else 
+        render :edit
+    end
 end
 
 def destroy 
