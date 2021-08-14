@@ -1,12 +1,12 @@
 module FishHelper
 
         def index_header_location
-        if @location 
+         if @location 
             content_tag(:h1, "#{@location.city} Fish:")
-        else 
+         else 
             content_tag(:h1, "All of the Fish!")
         end
-    end
+        end
 
     def new_header_location 
         if @location 
@@ -22,4 +22,5 @@ module FishHelper
          render partial: "location_fields", locals: { f: f } 
         end 
    end
+        
 end
