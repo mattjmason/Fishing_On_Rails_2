@@ -8,7 +8,7 @@ def index
     if params[:location_id] &&  @location = Location.find_by_id(params[:location_id])
         @fish = @location.fish 
     else 
-        @fish = Fish.all
+        @fish = Fish.order_by_weight
     end  
 end
 

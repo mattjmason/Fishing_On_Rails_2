@@ -7,9 +7,8 @@ class Fish < ApplicationRecord
     validates :weight, numericality: {greater_than: 0, less_than: 100}
     validates :age, presence: true
 
-    # scope :order_by_weight, -> {order(weight: :desc)}
-    # scope :order_by_age, -> {order(:age)}
-    # scope :color_selector, -> (color) {where('color == ?', color)}
+    scope :order_by_weight, -> {order(weight: :desc)}
+    # scope :order_by_city, -> {order(:city)}
 
     def location_attributes=(hash_of_attributes)
         if !hash_of_attributes["city"].blank?
@@ -18,10 +17,10 @@ class Fish < ApplicationRecord
     end
 
     def species_and_color
-        "#{self.species} - #{self.color}"
+        "#{self.species} - #{self.color} - #{self.location.city} "
     end
 
-    def self.order_by_weight
-        self.order(:weight)
-    end
+    # def self.order_by_weight
+    #     self.order(:weight)
+    # end
 end
