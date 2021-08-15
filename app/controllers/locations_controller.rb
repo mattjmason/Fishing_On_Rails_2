@@ -5,12 +5,12 @@ def index
 end
 
 def show 
-    @location = Location.find_by_id(params[:id])
+   
 end 
 
 def new 
     @location = Location.new
-       5.times { @location.fish.build }
+       4.times { @location.fish.build }
 end 
 
 def create 
