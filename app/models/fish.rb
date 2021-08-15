@@ -9,7 +9,7 @@ class Fish < ApplicationRecord
 
     scope :order_by_weight, -> {order(weight: :desc)}
     # scope :order_by_city, -> {order(:city)}
-
+    scope :filter_by_location, -> ( location) {where location: location }
     def location_attributes=(hash_of_attributes)
         if !hash_of_attributes["city"].blank?
             self.location = Location.find_or_create_by(hash_of_attributes)

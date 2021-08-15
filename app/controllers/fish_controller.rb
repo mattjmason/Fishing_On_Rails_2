@@ -5,10 +5,15 @@ layout "fish"
 
 
 def index 
-    if params[:location_id] &&  @location = Location.find_by_id(params[:location_id]) 
-        @fish = @location.fish 
-    else 
-        @fish = Fish.order_by_weight
+    
+    @fish = @current_angler.fish.order_by_weight
+    if params[:location_id] &&  @location = Location.find_by_id(params[:location_id])
+        @fish = @fish.filter_by_location(@location)
+    
+    # if params[:location_id] &&  @location = Location.find_by_id(params[:location_id]) 
+    #     @fish = @location.fish 
+    # else 
+    #     @fish = Fish.order_by_weight
     end  
 end
 
