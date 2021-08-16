@@ -24,10 +24,12 @@ class SessionsController < ApplicationController
             session[:angler_id] = angler.id
             flash[:message] = "Successful Login!!"
             redirect_to fish_index_path
-        else
+      
         end
     end
 
+else 
+    redirect_to root_path
     def destroy 
         session.delete(:angler_id)
         redirect_to fish_index_path
