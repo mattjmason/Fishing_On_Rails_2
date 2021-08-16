@@ -17,7 +17,7 @@ class Fish < ApplicationRecord
     end
 
     def species_and_color
-        "#{self.species} - #{self.color} - #{self.location.city} "
+        " Species: #{self.species.capitalize} Color: #{self.color.capitalize} Location: #{self.location.city} "
     end
 
     # def self.order_by_weight

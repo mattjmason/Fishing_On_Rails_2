@@ -1,8 +1,8 @@
 <h1> The Fish Page! </h1> 
 
 <%= @fish.species_and_color %>
-<%= @fish.weight %>
-<%= @fish.age %>
+<%= @fish.weight %> kg
+<%= @fish.age.capitalize %>
 
 <%= link_to "Edit", edit_fish_path(@fish)%>
 <%= link_to "Delete", fish_path(@fish), method: 'delete' %>

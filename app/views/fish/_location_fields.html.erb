@@ -1,5 +1,5 @@
   <h3>Select an Already Existing Location:</h3>
-    <%= f.collection_select :location_id, Location.all, :id, :city %>
+    <%= f.collection_select :location_id, @locations = @current_angler.locations.uniq, :id, :city %>
     <h3>Make a Location: </h3>
     <%= f.fields_for :location do |l| %>
     <%= render partial: "locations/form", locals: { f: l } %>
