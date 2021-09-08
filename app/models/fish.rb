@@ -7,7 +7,7 @@ class Fish < ApplicationRecord
     validates :weight, numericality: {greater_than: 0, less_than: 100}
     validates :age, presence: true
 
-    scope :order_by_weight, -> {order(weight: :desc)}
+    scope :order_by_weight, -> {order(weight: :asc)}
     # scope :order_by_city, -> {order(:city)}
     scope :filter_by_location, -> ( location) {where location: location }
     def location_attributes=(hash_of_attributes)
